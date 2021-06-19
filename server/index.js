@@ -17,7 +17,7 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
-const CONNECTION_URL = 'mongodb+srv://khalid:khalid123@cluster0.licwq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://Roman:Roman123@cluster0.licwq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
  const PORT = process.env.PORT || 5000;
 // it is a function which takes two parameter
  mongoose.connect(CONNECTION_URL, {userNewUrlParser: true,useUnifiedTopology:true})
