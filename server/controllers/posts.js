@@ -1,18 +1,24 @@
-import postMassage from '../models/postMassage.js';
+import PostMessage from '../models/postMessage.js';
 
-export const getPosts = async((req, res) => {
-   // res.send('THIS WORKS!');   //  each callback fun have try and catch block
-   try { // code in the try run on that time when everything is successful
-      const postMassages =  await postMessage.find();   
-      
-      //console.log(postMassages);
-
-      res.log(200).json(postMessages)
-    } catch(error){// if we get an error the then catch is run
-     res.status(404).json({message: error.message});
-   }
+export const getPosts = async (req, res) => { 
+    try {
+        const postMessages = await PostMessage.find();
+                
+        res.status(200).json(postMessages);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
 }
 
-export const createPost = (req , res) => {
-    res.send('Post Creattion');
+export const createPost =async (req, res) => {
+    const post = req.body;
+    try{
+        await newPost.save();
+
+        res.status(201).json(newPost);
+
+    }  catch(error){
+        res.status(409).json({message: error.message});
+
+    }
 }
