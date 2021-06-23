@@ -1,10 +1,14 @@
 import express from 'express';
 
-import {getPosts,createPosts } from '../controllers/posts.js'
+import { getPosts, getPost, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
+
 const router = express.Router();
-// callback function
-// http://localhost:5000/posts // when we check this url in search bar so we know that our express application is successfully conneted on 500 port 
-router.get('/', getPosts );
-router.get('/', createPost );
+
+router.get('/', getPosts);
+router.post('/', createPost);
+router.get('/:id', getPost);
+router.patch('/:id', updatePost);
+router.delete('/:id', deletePost);
+router.patch('/:id/likePost', likePost);
 
 export default router;
