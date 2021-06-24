@@ -24,7 +24,7 @@ export const createPost = (post) => async (dispatch) => {
 
 export const updatePost = (id, post) => async (dispatch) => {
   try {
-    const { data } = await api.updatePost(id, post);
+    const { data } = await api.updatePost(id, post);// when we want to return data we do like this in delete post we are not do like that.
 
     dispatch({ type: UPDATE, payload: data });
   } catch (error) {
