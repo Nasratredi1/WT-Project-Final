@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';// we want to edit which he writes already.
 import FileBase from 'react-file-base64';
 
 import useStyles from './styles';
@@ -14,7 +14,7 @@ const Form = ({ currentId, setCurrentId }) => {
 
   useEffect(() => {
     if (post) setPostData(post);
-  }, [post]);
+  }, [post]);// defendency array
 
   const clear = () => {
     setCurrentId(0);
